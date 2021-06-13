@@ -1,7 +1,8 @@
 import React, {Fragment} from 'react';
 import classes from './MealItem.module.css';
 import MealItemForm from './MealItemForm/MealItemForm';
-const MealItem = ({name, description, price}) =>{
+
+const MealItem = ({name, description, price, id}) =>{
     const priceTransformed = `$${price.toFixed(2)}`;
     return (
         <Fragment>
@@ -11,7 +12,7 @@ const MealItem = ({name, description, price}) =>{
                     <div className={classes.description}>{description}</div>
                     <div className={classes.price}>{priceTransformed}</div>
                 </div>
-                <MealItemForm/>
+                <MealItemForm id = {id}/>
             </li>
         </Fragment>
     )
